@@ -28,8 +28,6 @@ public class CalcTestSuite {
 		System.out.println("Test3 done.");
 		JankDriver.assertThat(actual == expected);
 	}
-	
-	HashMap hmap = new HashMap();
 }
 
 

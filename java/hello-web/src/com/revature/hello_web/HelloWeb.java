@@ -1,6 +1,8 @@
 // Always the first line
 package com.revature.hello_web;
 
+import com.revature.hello_web.util.ConnectionF;
+
 // Next Comes imports
 
 import com.sun.net.httpserver.HttpServer;
@@ -8,8 +10,8 @@ import java.net.InetSocketAddress;
 import java.io.IOException;
 import java.util.concurrent.Executors;
 
-public class HelloWeb {
-
+class HelloWeb {
+	ConnectionF conn;
 	public static void main(String[] args){
 
 		try {
