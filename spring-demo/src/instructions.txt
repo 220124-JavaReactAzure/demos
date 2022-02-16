@@ -1,0 +1,17 @@
+1. Right click on main and create a resources directory.
+
+2. Update pom.xml with the correct dependencies, spring core, spring context, lombok
+
+3. Create a Beans.xml file under the resources folder.
+Refer to this link on how to set up the xml file:
+https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html
+
+
+Challenges:
+
+1. Create a new class with at least 3 attributes and create some using constructor based and setter injection using XML.
+
+2. Use XML configuration to create a bean that has a collection. Put at least 3 items in the collection.
+Refer to this: https://www.tutorialspoint.com/spring/spring_injecting_collection.htm if you get stuck.
+
+3. Use annotations to instantiate a bean from the class created in the first challenge.
