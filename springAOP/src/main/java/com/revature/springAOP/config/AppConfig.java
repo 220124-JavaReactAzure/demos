@@ -24,7 +24,7 @@ public class AppConfig implements WebMvcConfigurer, WebApplicationInitializer {
 		beanContainer.register(AppConfig.class);
 		
 		servletContext.addListener(new ContextLoaderListener(beanContainer));
-		ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatherServlet", new DispatcherServlet(beanContainer));
+		ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", new DispatcherServlet(beanContainer));
 		
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
