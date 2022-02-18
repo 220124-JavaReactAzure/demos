@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.revature.springMVC.exceptions.InvalidRequestException;
 import com.revature.springMVC.web.dto.LoginRequest;
 import com.revature.springMVC.web.dto.LoginResponse;
 
@@ -67,6 +69,7 @@ public class TestController {
 	}
 	
 	@GetMapping("/test8")
+	@ResponseStatus 
 	public @ResponseBody String test8(@RequestHeader(required = false) String someHeader) {
 		return "He test 8 has a header of " + someHeader;
 	}
@@ -74,7 +77,21 @@ public class TestController {
 	@PostMapping(value="/test9", consumes = "application/json", produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody LoginResponse test9(@RequestBody LoginRequest loginRequest) {
 		System.out.println(loginRequest);
+		if(loginRequest.getUsername() == null || loginRequest.getUsername().trim().equals("")) {
+			throw new InvalidRequestException("There is an issue with login information try a gain");
+		}
 		return new LoginResponse(loginRequest.getUsername(), "JWT: ASDFASFASDFS-STS-IS-PERFECT-asdfasd");
+	}
+	
+	@GetMapping("/testEx")
+	public void testEx() {
+		throw new InvalidRequestException("hi");
+	}
+	
+	@ExceptionHandler({ InvalidRequestException.class})
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	public void handleInvalidExceptions(Exception e) {
+		System.out.println("Caught invalid Requst Exception: " + e.getMessage());
 	}
 	
 }
