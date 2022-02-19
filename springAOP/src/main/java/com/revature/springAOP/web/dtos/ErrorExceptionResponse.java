@@ -23,6 +23,7 @@ public class ErrorExceptionResponse {
 		super();
 		this.statusCode = statusCode;
 		this.cause = t.getClass().getSimpleName();
+		this.datetime = LocalDateTime.now().toString();
 	}
 	
 	public ErrorExceptionResponse(int statusCode, String message, Throwable t) {
@@ -30,6 +31,7 @@ public class ErrorExceptionResponse {
 		this.statusCode = statusCode;
 		this.message = message;
 		this.cause = t.getClass().getSimpleName();
+		this.datetime = LocalDateTime.now().toString();
 	}
 
 
