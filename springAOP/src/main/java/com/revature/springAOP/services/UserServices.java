@@ -2,6 +2,8 @@ package com.revature.springAOP.services;
 
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
+
 import com.revature.springAOP.daos.LoginDAO;
 import com.revature.springAOP.exceptions.AuthenticationException;
 import com.revature.springAOP.exceptions.InvalidRequestException;
@@ -10,6 +12,7 @@ import com.revature.springAOP.models.User;
 import com.revature.springAOP.web.dtos.LoginResponse;
 import com.revature.springAOP.web.dtos.SignUp;
 
+@Service
 public class UserServices {
 	
 	public LoginResponse login(String username, String password) {

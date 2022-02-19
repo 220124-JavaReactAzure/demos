@@ -9,6 +9,8 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import com.revature.springAOP.models.User;
+
 public class HibernateUtil {
 
 	private static SessionFactory sessionFactory;
@@ -24,7 +26,7 @@ public class HibernateUtil {
 			// Add properties to our configuration
 			configuration.setProperties(props);
 			// ONE ADDITIONAL STEP I NEED TO INCLUDE
-			//configuration.addAnnotatedClass(User.class);
+			configuration.addAnnotatedClass(User.class);
 	
 			// ServiceRegistry
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
