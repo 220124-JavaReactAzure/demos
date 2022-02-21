@@ -1,0 +1,50 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!--    Beans go here:-->
+
+
+    <!-- Property based injection -->
+    <bean id = "helloWorld" class = "com.revature.HelloWorld">
+        <property name="message" value = "Dinosaurs!"/>
+    </bean>
+
+    <!-- Pokemon with constructor injection -->
+    <bean id = "pikachu" class = "com.revature.Pokemon">
+        <!-- We can use types to specify arguments, but index is better -->
+        <constructor-arg index = "0" value = "Pikachu"/>
+        <constructor-arg index = "1" value = "Pika" />
+        <constructor-arg index = "2" value = "Electric"/>
+        <constructor-arg index = "3" value = "Mouse" />
+        <constructor-arg index = "4" value = "25"/>
+    </bean>
+
+    <!-- Setter injection -->
+    <bean id = "poochyena" class = "com.revature.Pokemon">
+        <!-- We can use opening and closing tags -->
+        <property name="species">
+            <value>Poochyena</value>
+        </property>
+        <property name="name">
+            <value>Pooch</value>
+        </property>
+        <property name="type1">
+            <value>Dark</value>
+        </property>
+        <!-- Or use self-closing tags. Probably best practice to stick with one -->
+        <property name="type2" value = "dog"/>
+        <property name="level" value = "30"/>
+    </bean>
+
+    <!-- Referencing other objects -->
+    <bean id = "ash" class = "com.revature.Trainer">
+        <property name = "name" value = "Ash Ketchum"/>
+        <!-- ref attribute references the id attribute of another bean -->
+        <property name = "starter" ref = "pikachu"/>
+        <property name = "num_badges" value = "100"/>
+    </bean>
+</beans>
