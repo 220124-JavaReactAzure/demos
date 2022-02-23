@@ -1,0 +1,5 @@
+com\revature\springMVC\web\dto\LoginResponse.class
+com\revature\springMVC\web\controllers\TestController.class
+com\revature\springMVC\exceptions\InvalidRequestException.class
+com\revature\springMVC\config\AppConfig.class
+com\revature\springMVC\web\dto\LoginRequest.class
