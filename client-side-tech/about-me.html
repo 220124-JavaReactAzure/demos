@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Charles is human.</title>
+	</head>
+	<body>
+		<div>
+			<h3>Insert Human Name of Interest:</h3>
+			<h1>Charles Jester...???</h1>
+			<p>This human is of: 28 years of age.</p>
+			<p>He graduated with a Bachelor Degree of Science in Biology.</p>
+
+			<h3>How on earth did he manage that?!?!</h3>
+
+			<div id="sanity_block">
+				<input type="checkbox" id="value1" onclick="myFunction()" />
+				<label id="label1" for="value1">He studied.</label>
+				<input type="checkbox" id="value2" onclick="myFunction()" />
+				<label type="value2" id="label2">He worked hard</label>
+				<input type="checkbox" id="value3" onclick="myFunction()" />
+				<label type="value3" id="label3">He kept my sanity</label>
+				<button onclick="hahaAlert()">Click ME!</button>
+			</div>
+
+			<h1>Clearly, he is one of great self confidence.</h1>
+			<h1>University: Delaware Valley University</h1>
+			<p>Location: Doylestown, PA</p>
+			<img
+				src="https://delval.edu/sites/default/files/styles/image_text_block_medium_square/public/2020-06/dvu-logo.png?itok=qdyVNoAh"
+				alt="DelVAl logo"
+			/>
+			<div id="subject list container">
+				<ol>
+					<li>Science</li>
+					<li>Math</li>
+					<li>Physics</li>
+					<li>Art</li>
+					<li>Criminal Justice</li>
+				</ol>
+			</div>
+
+			<h1>Adopt me a puppers?!</h1>
+			<a href="https://www.petfinder.com/pet-adoption/dog-adoption/puppies-for-adoption/" target="_blank"
+				><img src="https://media4.giphy.com/media/8P4SDAYxUNuk3HqIHb/giphy.gif" alt="Happy little goober"
+			/></a>
+
+			<div id="hobby_table">
+				<table>
+					<thead>
+						<tr>
+							<th>Name of Hobby</th>
+							<th>Hobby Length</th>
+							<th>Why I love it?</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Cooking</td>
+							<td>10 years</td>
+							<td>Make good eats!</td>
+						</tr>
+						<tr>
+							<td>Cycling</td>
+							<td>6 years</td>
+							<td>Love riding around outdoors(am lazy in winter though)</td>
+						</tr>
+						<tr>
+							<td>WoodWorking</td>
+							<td>2 years</td>
+							<td>I like building things.</td>
+						</tr>
+						<tr>
+							<td>Bass/Guitar</td>
+							<td>20-ish years?</td>
+							<td>Music is life.</td>
+						</tr>
+						<tr>
+							<td>Gaming</td>
+							<td>Since a wee lad</td>
+							<td>I need an escape from this reality</td>
+						</tr>
+						<tr>
+							<td>Working tooo dang hard on this file</td>
+							<td>One sleepless night</td>
+							<td>Because...idk...presure to do good?</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<a
+				href="C:\Users\CharlesJester\Desktop\Revature\trainerFiles\tech\client-side-tech\html\about-me-with-style.html"
+				target="_blank"
+				>This can get better?!?!!</a
+			>
+		</div>
+
+		<script>
+			function myFunction() {
+				const doc = document.getElementById("value1");
+				if (doc.checked === true) {
+					document.getElementById("label1").innerHTML = "sure he did...";
+				}
+				const doc2 = document.getElementById("value2");
+				if (doc2.checked === true) {
+					document.getElementById("label2").innerHTML = "His liver readings tells me otherwise";
+				}
+				const doc3 = document.getElementById("value3");
+				if (doc3.checked === true) {
+					document.getElementById("label3").innerHTML = "Yet...here he is";
+				}
+			}
+
+			function hahaAlert() {
+				window.alert("HAH! Poor Charles. Here's a cookie!");
+			}
+		</script>
+	</body>
+</html>
