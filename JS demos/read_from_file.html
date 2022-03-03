@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read from a file</title>
+</head>
+<body>
+    <h1>Why did the chicken cross the road???</h1>
+    <button onclick = getData()>View Punchline</button>
+    <h1 id = "punchline"></h1>
+
+    <script>
+        function getData() {
+            var request = new XMLHttpRequest();
+
+            // true -> async, false -> non-async
+            request.open('GET', 'data.txt', true);
+
+
+            // between steps:   
+            // Why we don't see 0 or 1?
+            request.onreadystatechange = function() {
+                // here, we can check what the ready state is:
+                console.log("Ready state: " + this.readyState);
+
+                if(this.readyState == 4 && this.status == 200) {
+                    document.getElementById('punchline').innerHTML = this.responseText;
+                }
+            }
+
+            request.send();
+        }
+    </script>
+
+    <script>
+        
+
+                // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+                // Value	State	            Description
+                // 0	    UNSENT	            Client has been created. open() not called yet.
+                // 1	    OPENED	            open() has been called.
+                // 2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+                // 3	    LOADING	            Downloading; responseText holds partial data.
+                // 4	    DONE	            The operation is complete.
+    </script>
+    
+</body>
+</html>
