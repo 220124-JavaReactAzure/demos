@@ -1,0 +1,15 @@
+.wrapper {
+}
+
+h2.header {
+    font-size: 15px;
+}
+
+.card:hover {
+    background: #ffbcad;
+    cursor: pointer;
+}
+
+.card:active {
+    background: #fa947d;
+}
